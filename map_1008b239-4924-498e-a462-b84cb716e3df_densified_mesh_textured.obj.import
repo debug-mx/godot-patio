@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/map_1008b239-4924-498e-a462-b84cb716e3df_densified_mesh_textured.obj-00e547de3555dccd81528b30996179ee.mesh"
+
+[deps]
+
+files=[ "res://.import/map_1008b239-4924-498e-a462-b84cb716e3df_densified_mesh_textured.obj-00e547de3555dccd81528b30996179ee.mesh" ]
+
+source_file="res://map_1008b239-4924-498e-a462-b84cb716e3df_densified_mesh_textured.obj"
+dest_files=[ "res://.import/map_1008b239-4924-498e-a462-b84cb716e3df_densified_mesh_textured.obj-00e547de3555dccd81528b30996179ee.mesh", "res://.import/map_1008b239-4924-498e-a462-b84cb716e3df_densified_mesh_textured.obj-00e547de3555dccd81528b30996179ee.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://map_4b653b41-43a0-4fcb-84e4-7341b93d5ed6_densified_mesh_textured.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://new_spatialmaterial.tres" type="Material" id=2]
+[ext_resource path="res://KinematicBody.gd" type="Script" id=3]
+[ext_resource path="res://Spatial.gd" type="Script" id=4]
+[ext_resource path="res://utai.ogg" type="AudioStream" id=5]
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 1, 5, 3 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.470588, 0.384314, 0.317647, 1 )
+
+[sub_resource type="PlaneMesh" id=1]
+material = SubResource( 2 )
+size = Vector2( 10, 10 )
+
+[sub_resource type="ConvexPolygonShape" id=3]
+points = PoolVector3Array( 5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, -5 )
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 4 )
+
+[node name="KinematicBody" type="KinematicBody" parent="."]
+transform = Transform( 2.89007, 0, 1.19209e-07, 0, 2.89007, 0, -1.19209e-07, 0, 2.89007, 2, 4, -3 )
+script = ExtResource( 3 )
+
+[node name="RotationHelper" type="Spatial" parent="KinematicBody"]
+transform = Transform( 0.153943, -6.00235e-18, 1.22511e-07, -6.55957e-18, 0.153943, 0, -1.22511e-07, -1.92069e-18, 0.153943, 0, 1, 0 )
+
+[node name="Camera" type="Camera" parent="KinematicBody/RotationHelper"]
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 0.105632, 3.0743e-12, 1.4001e-07, 3.60683e-12, 0.24786, 3.6934e-09, -1.4001e-07, -7.37613e-18, 0.105632, -0.231654, 1.67271, 1.27325 )
+shape = SubResource( 4 )
+
+[node name="room" type="MeshInstance" parent="."]
+transform = Transform( 6.04465, 0, 1.84423, 0, 6.31973, 0, -1.84423, 0, 6.04465, 0.255976, 10.329, 0.484987 )
+mesh = ExtResource( 1 )
+material/0 = ExtResource( 2 )
+
+[node name="ground" type="StaticBody" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="ground"]
+transform = Transform( 2.89007, 0, 0, 0, 2.89007, 0, 0, 0, 2.89007, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="ground"]
+transform = Transform( 2.89007, 0, 0, 0, 2.89007, 0, 0, 0, 2.89007, 0, 0, 0 )
+shape = SubResource( 3 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.237838, 0.971305, 0, -0.971305, 0.237838, 0, 27.2769, 3.16714 )
+visible = false
+shadow_enabled = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 5 )
+autoplay = true

@@ -1,0 +1,7 @@
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://map_4b653b41-43a0-4fcb-84e4-7341b93d5ed6_densified_mesh_textured_8192.jpg" type="Texture" id=1]
+
+[resource]
+render_priority = -1
+albedo_texture = ExtResource( 1 )

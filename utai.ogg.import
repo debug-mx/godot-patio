@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/utai.ogg-bfa5f4f5af5377bece889286cf461940.oggstr"
+
+[deps]
+
+source_file="res://utai.ogg"
+dest_files=[ "res://.import/utai.ogg-bfa5f4f5af5377bece889286cf461940.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
